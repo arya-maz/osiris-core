@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package osirisService;
+
+/*
+
+  API service definitions: PUT, DELETE, POST and GET
+
+*/
+
+
+
+
+
