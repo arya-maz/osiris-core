@@ -20,7 +20,7 @@ Programming Language:
 **Trello Board:** https://trello.com/invite/b/671af1f68bce58b9b411e3aa/ATTIfd70d003fb0142651ce733badf17586f74B1D7CF/cs490-cli-and-usermanagement
 
 # Prerequistes:
-## Installing gRPC:
+## Installing requirements:
 
 - Python 3.7 or higher
 - `pip` version 9.0.1 or higher
@@ -35,18 +35,14 @@ $ python -m pip install virtualenv
 $ virtualenv venv
 $ source venv/bin/activate
 ```
-### gRPc:
-Install gRPC:
-```
-$ python -m pip install grpcio
 
-$ python -m pip install grpcio-tools
+Installing `requirements.txt`:
+
 ```
-or, for system wide installation 
+ pip install -r requirements.txt 
 ```
-$ sudo python -m pip install grpcio
-```
-## Compiling a protobuf `.proto` file extension:
+
+## Compiling a protobuf `.proto` file extension(optional):
 Consider a `.proto` file that is stored in a file structure such as:
 
 ```
@@ -74,12 +70,13 @@ This generated files for example are than used on the server & client scripts.
 # Sprint 1(Prototype API):
 - For Sprint 1, the prototype API created uses mock/hardcoded data and stores this data locally in JSON file.
 
-- 6 files were created:
+- 7 files were created:
     -  `osirisService.proto`: Defines the structure of the service, including the methods available and their parameters.
     - `users.py`: Defines all backend methods for user info and stores them in a JSON file.
     - `server.py`: Handles server side logic
     - `client.py`: Handles client side logic
     - `osirisService_pb2.py` and `osirisService_pb2_grpc.py`: Auto generated from compiling `osirisService.proto` file.
+    - `requirements.txt`: Used to install neccessary dependencies.
 
 ### Demo
 Compile `server.py`:
@@ -109,7 +106,7 @@ The client is tested with the following sample hard-coded data for `Adding`, `De
         {"name": "LeBron James", "role": "developer"}
   ]
 ```
-Compile `client.py`:
+Compile `client.py` on a new terminal window:
 
 ```
 $ python3 client.py
