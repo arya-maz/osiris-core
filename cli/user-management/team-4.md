@@ -39,6 +39,8 @@ $ source venv/bin/activate
 Install gRPC:
 ```
 $ python -m pip install grpcio
+
+$ python -m pip install grpcio-tools
 ```
 or, for system wide installation 
 ```
