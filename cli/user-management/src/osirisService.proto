@@ -9,6 +9,56 @@ package osirisService;
 */
 
 
+// The user service definition.
+service User {
+  
+  // Create a new user
+  rpc CreateUser (CreateUserRequest) returns (UserResponse);
+
+  // Get user details by ID
+  rpc GetUser (GetUserRequest) returns (UserResponse);
+
+  // Update an existing user
+  rpc UpdateUser (UpdateUserRequest) returns (UserResponse);
+
+  // Delete a user by ID
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
+}
+
+// Messages for user service requests and responses
+
+// CreateUserRequest for creating a new user
+message CreateUserRequest {
+  string name = 1;
+}
+
+// GetUserRequest for retrieving a user by ID
+message GetUserRequest {
+  int32 user_id = 1;
+}
+
+// UpdateUserRequest for updating an existing user
+message UpdateUserRequest {
+  int32 user_id = 1;
+  string name = 2;
+}
+
+// DeleteUserRequest for deleting a user by ID
+message DeleteUserRequest {
+  int32 user_id = 1;
+}
+
+// UserResponse with user details
+message UserResponse {
+  int32 user_id = 1;
+  string name = 2;
+}
+
+// DeleteUserResponse to confirm deletion
+message DeleteUserResponse {
+  bool success = 1;
+  string message = 2;
+}
 
 
 
